@@ -1,0 +1,21 @@
+<div class="mainCarddiv">
+	<div class="mainCard" *ngFor="let i of array">
+
+		<div class="card hover">
+			<div class="card-img" style="background-image:url({{i.img}});">
+				<div class="overlay">
+					<div class="overlay-content">
+						<a class="hover" href="#!">Visit<i class="fa-solid fa-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="card-content">
+				<a href="#!">
+					<h2 class="title">{{i.name}}</h2>
+					<p class="desc">{{i.desc}}</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

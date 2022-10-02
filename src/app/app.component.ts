@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare function mobilenav():void;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'easy-blog';
+  constructor(){
+    // this.tester()
+  }
+  mobilenav(){ 
+    mobilenav()
+  }
+
 }
