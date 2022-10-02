@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: easy-blog.pages.dev
+Token: 3ec7c4dc32d94a836ebbcae5713383befddf150a6aa39fd9fe0c90e7dc39a56d
