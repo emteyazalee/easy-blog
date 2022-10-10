@@ -27,6 +27,14 @@ export class HomeComponent implements OnInit {
   {name:"C-Programming",
     desc:"All relaA FD",
     img:"../assets/home_images/python.png"
+  },
+  {name:"C-Programming",
+    desc:"All relaA FD",
+    img:"../assets/home_images/python.png"
+  },
+  {name:"C-Programming",
+    desc:"All relaA FD",
+    img:"../assets/home_images/python.png"
   }
     
   ];

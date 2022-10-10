@@ -1,22 +1,47 @@
-// homejs
-$(document).ready(function() {
+$(document).ready(function(){
+	var zindex = 10;
 	
-	$('.card').delay(1800).queue(function(next) {
-		$(this).removeClass('hover');
-		$('a.hover').removeClass('hover');
-		next();
+	$("div.card").click(function(e){
+	  e.preventDefault();
+  
+	  var isShowing = false;
+  
+	  if ($(this).hasClass("show")) {
+		isShowing = true
+	  }
+  
+	  if ($("div.cards").hasClass("showing")) {
+		// a card is already in view
+		$("div.card.show")
+		  .removeClass("show");
+  
+		if (isShowing) {
+		  // this card was showing - reset the grid
+		  $("div.cards")
+			.removeClass("showing");
+		} else {
+		  // this card isn't showing - get in with it
+		  $(this)
+			.css({zIndex: zindex})
+			.addClass("show");
+  
+		}
+  
+		zindex++;
+  
+	  } else {
+		// no cards in view
+		$("div.cards")
+		  .addClass("showing");
+		$(this)
+		  .css({zIndex:zindex})
+		  .addClass("show");
+  
+		zindex++;
+	  }
+	  
 	});
-});
-
-// contact
-
-// document.querySelector('#contact-form').addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     e.target.elements.name.value = '';
-//     e.target.elements.email.value = '';
-//     e.target.elements.message.value = '';
-//   });
-
+  });
 
 // ---------Responsive-navbar-active-animation-----------
 function test(){
@@ -62,7 +87,7 @@ $(".navbar-toggler").click(function(){
 
 
 function mobilenav(){
-	alert("lollipop")
+	
 	$(".navbar-collapse").slideToggle(300);
 	setTimeout(function(){ test(); });
 }
