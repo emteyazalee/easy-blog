@@ -1,10 +1,16 @@
-
+<ngx-ui-loader></ngx-ui-loader>
     
-    <nav class="navbar navbar-expand-custom navbar-mainbg">
-  <a class="navbar-brand navbar-logo" href="#">Navbar</a>
-  <button class="navbar-toggler" (click)="mobilenav()" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+  <a href="#"><img class="navbar-logo" src="../assets/logo.png" width="125" height="63" ALT="Easy-Blog" ALIGN=CENTER></a>
+  <!-- <button class="navbar-toggler" (click)="mobilenav()" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
   <i class="fas fa-bars text-white"></i>
-  </button>
+  </button> -->
+
+
+    <div class="navbar-toggler content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="mobilenav()">
+<div  class="icon icon-expand"> <i class="fa fa-bars"></i></div></div>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
           <div class="hori-selector"><div class="left"></div><div class="right"></div></div>

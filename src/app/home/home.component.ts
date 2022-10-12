@@ -12,29 +12,42 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   array = [
-    {name:"Python",
+
+    {
+    real :true,
+    name:"Python",
     desc:"All available Blog_post regarding python",
     img:"../assets/home_images/python.png"
   },
   {name:"C-Programming",
     desc:"All relaA FD",
-    img:"../assets/home_images/python.png"
+    img:"../assets/home_images/python.png",
+    real :false,
+
   },
   {name:"j",
     desc:"All relaA FD",
-    img:"../assets/home_images/python.png"
+    img:"../assets/home_images/python.png",
+    real :true,
+
   },
   {name:"C-Programming",
     desc:"All relaA FD",
-    img:"../assets/home_images/python.png"
+    img:"../assets/home_images/python.png",
+    real :false,
+
   },
   {name:"C-Programming",
     desc:"All relaA FD",
-    img:"../assets/home_images/python.png"
+    img:"../assets/home_images/python.png",
+    real :true,
+
   },
   {name:"C-Programming",
     desc:"All relaA FD",
-    img:"../assets/home_images/python.png"
+    img:"../assets/home_images/python.png",
+    real :false,
+
   }
     
   ];

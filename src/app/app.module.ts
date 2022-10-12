@@ -8,6 +8,45 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlenderComponent } from './mainTopics/blender/blender.component';  
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule, NgxUiLoaderRouterModule } from "ngx-ui-loader";
+import { HttpClientModule } from "@angular/common/http";
+import {
+  NgxUiLoaderConfig,
+  SPINNER,
+  POSITION,
+  PB_DIRECTION,
+} from "ngx-ui-loader";
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+    "bgsColor": "red",
+    "bgsOpacity": 0.5,
+    "bgsPosition": "bottom-right",
+    "bgsSize": 60,
+    "bgsType": "ball-spin-clockwise",
+    "blur": 5,
+    "delay": 0,
+    "fastFadeOut": true,
+    "fgsColor": "red",
+    "fgsPosition": "center-center",
+    "fgsSize": 60,
+    "fgsType": "three-strings",
+    "gap": 24,
+    "logoPosition": "center-center",
+    "logoSize": 120,
+    "logoUrl": "../assets/onlylogo.png",
+    "masterLoaderId": "master",
+    "overlayBorderRadius": "0",
+    "overlayColor": "rgba(40, 40, 40, 0.8)",
+    "pbColor": "red",
+    "pbDirection": "ltr",
+    "pbThickness": 3,
+    "hasProgressBar": true,
+    "text": "",
+    "textColor": "#FFFFFF",
+    "textPosition": "center-center",
+    "maxTime": -1,
+    "minTime": 300
+};
 
 @NgModule({
   declarations: [
@@ -16,14 +55,18 @@ import { BlenderComponent } from './mainTopics/blender/blender.component';
     ContactComponent,
     AboutComponent,
     BlenderComponent,
-
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule
+
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
