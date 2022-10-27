@@ -1,47 +1,5 @@
-$(document).ready(function(){
-	var zindex = 10;
-	
-	$("div.card").click(function(e){
-	  e.preventDefault();
-  
-	  var isShowing = false;
-  
-	  if ($(this).hasClass("show")) {
-		isShowing = true
-	  }
-  
-	  if ($("div.cards").hasClass("showing")) {
-		// a card is already in view
-		$("div.card.show")
-		  .removeClass("show");
-  
-		if (isShowing) {
-		  // this card was showing - reset the grid
-		  $("div.cards")
-			.removeClass("showing");
-		} else {
-		  // this card isn't showing - get in with it
-		  $(this)
-			.css({zIndex: zindex})
-			.addClass("show");
-  
-		}
-  
-		zindex++;
-  
-	  } else {
-		// no cards in view
-		$("div.cards")
-		  .addClass("showing");
-		$(this)
-		  .css({zIndex:zindex})
-		  .addClass("show");
-  
-		zindex++;
-	  }
-	  
-	});
-  });
+
+// home finished   
 
 // ---------Responsive-navbar-active-animation-----------
 function test(){
@@ -106,24 +64,4 @@ jQuery(document).ready(function($){
 	// Add active class to target link
 	target.parent().addClass('active');
 });
-
-
-
-// Add active class on another page linked
-// ==========================================
-// $(window).on('load',function () {
-//     var current = location.pathname;
-//     console.log(current);
-//     $('#navbarSupportedContent ul li a').each(function(){
-//         var $this = $(this);
-//         // if the current path is like this link, make it active
-//         if($this.attr('href').indexOf(current) !== -1){
-//             $this.parent().addClass('active');
-//             $this.parents('.menu-submenu').addClass('show-dropdown');
-//             $this.parents('.menu-submenu').parent().addClass('active');
-//         }else{
-//             $this.parent().removeClass('active');
-//         }
-//     })
-// });
 

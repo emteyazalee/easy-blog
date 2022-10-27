@@ -16,6 +16,8 @@ import {
   POSITION,
   PB_DIRECTION,
 } from "ngx-ui-loader";
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { MazeComponent } from './games/maze/maze.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     "bgsColor": "red",
@@ -55,6 +57,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ContactComponent,
     AboutComponent,
     BlenderComponent,
+    PagenotfoundComponent,
+    MazeComponent,
   ],
   imports: [
     HttpClientModule,

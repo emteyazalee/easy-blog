@@ -15,5 +15,5 @@ export class AppComponent {
   mobilenav(){ 
     mobilenav()
   }
-
+  hideNav:boolean=false;
 }

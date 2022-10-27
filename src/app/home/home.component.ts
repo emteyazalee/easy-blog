@@ -12,42 +12,36 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   array = [
-
     {
-    real :true,
     name:"Python",
     desc:"All available Blog_post regarding python",
     img:"../assets/home_images/python.png"
   },
-  {name:"C-Programming",
+  {
+    name:"C-Programming",
     desc:"All relaA FD",
-    img:"../assets/home_images/python.png",
-    real :false,
+    img:"../assets/home_images/coding.png",
+   
+  },
+  {
+    name:"Angular",
+    desc:"All relaA FD",
+    img:"../assets/home_images/angular.png",
+
 
   },
-  {name:"j",
+  {
+    name:"Blender",
     desc:"All relaA FD",
-    img:"../assets/home_images/python.png",
-    real :true,
+    img:"../assets/home_images/blender.png",
+    
 
   },
-  {name:"C-Programming",
+  {
+    name:"Flutter",
     desc:"All relaA FD",
-    img:"../assets/home_images/python.png",
-    real :false,
-
-  },
-  {name:"C-Programming",
-    desc:"All relaA FD",
-    img:"../assets/home_images/python.png",
-    real :true,
-
-  },
-  {name:"C-Programming",
-    desc:"All relaA FD",
-    img:"../assets/home_images/python.png",
-    real :false,
-
+    img:"../assets/home_images/flutter.png",
+ 
   }
     
   ];
