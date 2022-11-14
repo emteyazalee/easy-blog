@@ -1,197 +1,125 @@
-<!-- <div class="mainCarddiv">
-	 <div class="mainCard" *ngFor="let i of array">
+<div class="main">
+  <div class="allcard">
+<div class="cards" *ngFor="let data of array; let i=index">
+  <div class="card" [ngStyle]="{'width.px': cardwidth,'height.px': cardheight}" *ngIf="i%2===0">
+    <div class="additional">
+      <div class="user-card">
+        <div class="level center">
+          Difficulty: {{data.difficulty}}
+        </div>
 
-		<div class="card hover">
-			<div class="card-img" style="background-image:url({{i.img}});">
-				<div class="overlay">
-					<div class="overlay-content">
-						<a class="hover" href="#!">Visit<i class="fa-solid fa-arrow-right"></i></a>
-					</div>
-				</div>
-			</div>
-			
-			<div class="card-content">
-				<a href="#!">
-					<h2 class="title">{{i.name}}</h2>
-					<p class="desc">{{i.desc}}</p>
-				</a>
-			</div>
-		</div>
-	</div>
-</div> -->
 
-<!-- links -->
-<!-- 
-<body>
-    <div class="container">
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
-                    <h3>Blender</h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <p>Blender is a free and open-source 3D computer graphics software tool set used for creating animated films, visual effects, art, 3D-printed models, motion graphics...</p>
-                        <a href="#">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
-                    <h3>Code</h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <p>Computer programming, the process of creating and maintaining the source code of computer programs....</p>
-                        <a href="#">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                    <h3>Launch</h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <p>Coming Soon</p>
-                        <a href="#">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
- -->
-<body>
-    <div class="banner">
- <div class="plx-card gold">
-    <div class="pxc-bg" style="background-image:url('https://i.gyazo.com/a846fc87cca5ebd3942ae1e038bb5083.png')"> </div>
-    <div class="pxc-avatar"><img src="../assets/home_images/python.png?w=240&amp;h=240&amp;bg_color=000000&amp;opacity=100&amp;_version=00_09_000"/></div>
-    <div class="pxc-stopper"> </div>
-    <div class="pxc-subcard">
-      <div class="pxc-title">Super Awesome Long-named Serverrrrrrr</div>
-      <div class="pxc-sub"> Thiss probably should be called tagline instead  </div>
-      <div class="pxc-feats"><span>Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat </span>
-      </div>
-      <div class="pxc-tags">
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat TwoFeat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-      </div>
-      <div class="bottom-row"> 
-        <div class="pxc-info">
-          <div class="flags"><span><img src=""/></span><span><img src=""/></span><span><img src=""/></span><span><img src=""/></span><span><img src=""/></span>
+        <img src="{{data.img}}" alt="">
+
+        <div>
+
+          <div class="points center">
+            Object-Oriented: 
+            <i *ngIf="data.oops" class="fa fa-check-square" aria-hidden="true"></i>
+            <i *ngIf="!data.oops" class="fa fa-window-close" aria-hidden="true"></i>
+
           </div>
-          <div class="region">Global</div>
         </div>
-        <div class="links"><a class="site" uk-tooltip="WEBSITE"><i class="fa-brands fa-firefox-browser"></i></a><a class="link discordLink" uk-tooltip="Learn"><i class="fa-solid fa-graduation-cap"></i></a><a class="shop" uk-tooltip="View"><i class="bi bi-browser-chrome white"></i></a></div>
       </div>
+      <div class="more-info">
+        <h1 class="topic">{{data.name}}</h1>
+        <div class="coords">
+          <span>Released Date</span>
+          <span>{{data.date}}</span>
+        </div>
+        <div class="coords">
+          <span>Country Of Origin</span>
+          <span>{{data.country}}</span>
+        </div>
+        <div class="stats">
+          <div>
+            <div class="title">Rating</div>
+            <i class="fa fa-star"></i>
+            <div class="value">{{data.rate}}</div>
+          </div>
+          <div>
+            <div class="title">Downloads</div>
+            <i class="fa fa-download"></i>
+            <div class="value">27</div>
+          </div>
+          <div>
+            <div class="title">Awards</div>
+            <i class="fa fa-trophy"></i>
+            <div class="value">123</div>
+          </div>
+          <div>
+            <div class="title">Coffee</div>
+            <i class="fa fa-coffee"></i>
+            <div class="value infinity">∞</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="general">
+      <h1 class="topic">{{data.name}}</h1>
+      <hr size="10" style="margin-top: -5px;" noshade> 
+      <p class="desc">{{data.desc}}</p>
+  
+      <span class="more">Click or Hover</span>
+    
     </div>
   </div>
-  <div class="plx-card silver">
-    <div class="pxc-bg" style="background-image:url('https://i.gyazo.com/a846fc87cca5ebd3942ae1e038bb5083.png')"> </div>
-    <div class="pxc-avatar"><img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/GB/en/999/EP4312-CUSA07658_00-AV00000000000049/1536930670000/image?w=240&amp;h=240&amp;bg_color=000000&amp;opacity=100&amp;_version=00_09_000"/></div>
-    <div class="pxc-stopper"> </div>
-    <div class="pxc-subcard">
-      <div class="pxc-title">Super Awesome Long-named Serverrrrrrr</div>
-      <div class="pxc-sub"> Thiss probably should be called tagline instead  </div>
-      <div class="pxc-feats"><span>Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat </span>
-      </div>
-      <div class="pxc-tags">
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat TwoFeat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-      </div>
-      <div class="bottom-row"> 
-        <div class="pxc-info">
-          <div class="flags"><span><img src="http://pollux.fun/images/flags/EN.png"/></span><span><img src="http://pollux.fun/images/flags/BR.png"/></span><span><img src="http://pollux.fun/images/flags/FR.png"/></span><span><img src="http://pollux.fun/images/flags/TR.png"/></span><span><img src="http://pollux.fun/images/flags/JP.png"/></span>
-          </div>
-          <div class="region">Global</div>
+
+  <div class="card green" [ngStyle]="{'width.px': cardwidth,'height.px': cardheight}" *ngIf="i%2!==0">
+    <div class="additional">
+      <div class="user-card">
+        <div class="level center">
+          Difficulty: {{data.difficulty}}
         </div>
-        <div class="links"><a class="site" uk-tooltip="WEBSITE"><i class="fas fa-globe-americas"> </i></a><a class="link discordLink" uk-tooltip="DISCORD SERVER"><i class="fab fa-discord"></i></a><a class="shop" uk-tooltip="EXCLUSIVE POLLUX SHOP"><i class="fas fa-shopping-bag"> </i></a></div>
+        <img src="{{data.img}}"alt="">
+       
+        <div class="points center">
+          Object-Oriented: 
+          <i *ngIf="data.oops" class="fa fa-check-square" aria-hidden="true"></i>
+          <i *ngIf="!data.oops" class="fa fa-window-close" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="more-info">
+        <h1 class="topic">{{data.name}}</h1>
+        <div class="coords">
+          <span>Released Date</span>
+          <span>{{data.date}}</span>
+        </div>
+        <div class="coords">
+          <span>Origination</span>
+          <span>{{data.country}}</span>
+        </div>
+        <div class="stats">
+          <div>
+            <div class="title">Rating</div>
+            <i class="fa fa-star"></i>
+            <div class="value">{{data.rate}}</div>
+          </div>
+          <div>
+            <div class="title">Downloads</div>
+            <i class="fa fa-download"></i>
+            <div class="value">27</div>
+          </div>
+          <div>
+            <div class="title">Awards</div>
+            <i class="fa fa-trophy"></i>
+            <div class="value">123</div>
+          </div>
+          <div>
+            <div class="title">Coffee</div>
+            <i class="fa fa-coffee"></i>
+            <div class="value infinity">∞</div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="mainBronze">
-  <div class="plx-card bronze">
-    <div class="pxc-bg" style="background-image:url('https://i.gyazo.com/a846fc87cca5ebd3942ae1e038bb5083.png')"> </div>
-    <div class="pxc-avatar"><img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/GB/en/999/EP4312-CUSA07658_00-AV00000000000049/1536930670000/image?w=240&amp;h=240&amp;bg_color=000000&amp;opacity=100&amp;_version=00_09_000"/></div>
-    <div class="pxc-stopper"> </div>
-    <div class="pxc-subcard">
-      <div class="pxc-title">lastr</div>
-      <div class="pxc-sub"> Thiss probably should be called tagline instead  </div>
-      <div class="pxc-feats"><span>Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat </span>
-      </div>
-      <div class="pxc-tags">
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat TwoFeat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-      </div>
-      <div class="bottom-row"> 
-        <div class="pxc-info">
-          <div class="flags"><span><img src="http://pollux.fun/images/flags/EN.png"/></span><span><img src="http://pollux.fun/images/flags/BR.png"/></span><span><img src="http://pollux.fun/images/flags/FR.png"/></span><span><img src="http://pollux.fun/images/flags/TR.png"/></span><span><img src="http://pollux.fun/images/flags/JP.png"/></span>
-          </div>
-          <div class="region">Global</div>
-        </div>
-        <div class="links"><a class="site" uk-tooltip="WEBSITE"><i class="fas fa-globe-americas"> </i></a><a class="link discordLink" uk-tooltip="DISCORD SERVER"><i class="fab fa-discord"></i></a><a class="shop" uk-tooltip="EXCLUSIVE POLLUX SHOP"><i class="fas fa-shopping-bag"> </i></a></div>
-      </div>
+    <div class="general">
+      <h1 class="topic">{{data.name}}</h1>
+      <hr size="10" style="margin-top: -5px;" noshade> 
+      <p class="desc">{{data.desc}}</p>
+      <span class="more">Click or Hover</span>
     </div>
-  </div>
-  <div class="plx-card bronze">
-    <div class="pxc-bg" style="background-image:url('https://i.gyazo.com/a846fc87cca5ebd3942ae1e038bb5083.png')"> </div>
-    <div class="pxc-avatar"><img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/GB/en/999/EP4312-CUSA07658_00-AV00000000000049/1536930670000/image?w=240&amp;h=240&amp;bg_color=000000&amp;opacity=100&amp;_version=00_09_000"/></div>
-    <div class="pxc-stopper"> </div>
-    <div class="pxc-subcard">
-      <div class="pxc-title">Slastr</div>
-      <div class="pxc-sub"> Thiss probably should be called tagline instead  </div>
-      <div class="pxc-feats"><span>Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat Feat One</span><span> Feat Two</span><span> Feat One Hundred and Seventy Three</span><span> Feat Forty Five</span><span>Feat </span>
-      </div>
-      <div class="pxc-tags">
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat TwoFeat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-        <div>Feat Two</div>
-      </div>
-      <div class="bottom-row"> 
-        <div class="pxc-info">
-          <div class="flags"><span><img src="http://pollux.fun/images/flags/EN.png"/></span><span><img src="http://pollux.fun/images/flags/BR.png"/></span><span><img src="http://pollux.fun/images/flags/FR.png"/></span><span><img src="http://pollux.fun/images/flags/TR.png"/></span><span><img src="http://pollux.fun/images/flags/JP.png"/></span>
-          </div>
-          <div class="region">Global</div>
-        </div>
-        <div class="links"><a class="site" uk-tooltip="WEBSITE"><i class="fas fa-globe-americas"> </i></a><a class="link discordLink" uk-tooltip="DISCORD SERVER"><i class="fab fa-discord"></i></a><a class="shop" uk-tooltip="EXCLUSIVE POLLUX SHOP"><i class="fas fa-shopping-bag"></i></a></div>
-      </div>
-    </div>
-  </div>
   </div>
 </div>
-</body>
+</div>
+</div>
