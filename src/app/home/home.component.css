@@ -27,8 +27,10 @@ body {
 
 .main{
   background-color: #272727;
+  overflow:hidden;
   /* max-width: 1200px; */
-  margin: 3px;
+  margin: 1px;
+  
   
 
 }
@@ -42,31 +44,34 @@ body {
 }
 .cards{
   display: flex;
-  padding: 1rem;
+  padding: 1rem 1px;
 }
 
 @media (min-width: 40rem) {
   .main{
-    padding: 20px 1vw;
+    padding: 1vh 10%;
   }
   .cards {
     width: 50%;
   }
 }
 
-@media (min-width: 56rem) {
+@media (max-width: 56rem) {
   .main{
-    padding: 20px 5vw;
+    padding: 3px 10px;
   }
   .cards {
-    width: 50%;
+    width: 100%;
   }
+  .card .general {
+  width: 60%;
+}
 }
 
 
 .card {
   display: inline-block;
-  align-items: stretch;
+  /* align-items: stretch; */
   justify-items: auto;
   /* width: 450px; */
    /* height: 250px;  */
