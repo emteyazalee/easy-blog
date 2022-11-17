@@ -47,26 +47,6 @@ body {
   padding: 1rem 1px;
 }
 
-@media (min-width: 40rem) {
-  .main{
-    padding: 1vh 10%;
-  }
-  .cards {
-    width: 50%;
-  }
-}
-
-@media (max-width: 56rem) {
-  .main{
-    padding: 3px 10px;
-  }
-  .cards {
-    width: 100%;
-  }
-  .card .general {
-  width: 60%;
-}
-}
 
 
 .card {
@@ -180,10 +160,14 @@ body {
   margin: 0 1rem;
   color: #fff;
   font-size: 1rem;
+display: inline-block;
+
 }
 
 .card.green .additional .coords {
   color: #325C46;
+display: inline-block;
+
 }
 
 .card .additional .coords span + span {
@@ -267,3 +251,66 @@ body {
   text-overflow: ellipsis;
 }
 
+
+@media (min-width: 40rem) {
+  .main{
+    padding: 1vh 5vw;
+  }
+  .cards {
+    width: 50%;
+  }
+
+}
+
+@media (max-width: 56rem) {
+  .main{
+    padding: 3px 10px;
+  }
+  .cards {
+    width: 100%;
+  }
+  .card .general {
+  width: 65%;
+}
+.card .additional .user-card {
+    width:100px;
+  }
+  .card .additional .user-card .center{
+    font-size: 0.4rem;
+  }
+.card .additional {
+  width: 100px;
+}
+.topic{
+  font-size: 1rem;
+}
+.desc{
+  font-size: 0.75rem;
+}
+.more{
+  font-size: 0.7rem;
+}
+.card .additional .more-info {
+  width: 80%;
+  float: left;
+  position: absolute;
+  left:100px;
+  height: 100%;
+}
+
+span{
+  display: block;
+   text-align: justify;
+  font-size: 0.7rem;
+}
+.card .additional .stats {
+font-size: initial;
+}
+.card .additional .stats div.title {
+ display: none;
+}
+.card .additional .stats div.value {
+
+  font-size: medium;
+}
+}
